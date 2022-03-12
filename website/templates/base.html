@@ -1,0 +1,19 @@
+{% load static %} {# static はinckudeと違い、使うならロードする必要がある#}
+<!doctype HTML>
+<html>
+    <head>
+        <link rel ="stylesheet" href="{% static 'main.css' %}"> {# cssを置く #}
+    </head>
+    <body  style="
+            text-align: center;
+        ">
+        {% include "_navbar.html" %}
+        
+        {% block main %}
+        コンテンツがありません。
+        {% endblock %}
+        
+        {% include "_footer.html" %}
+    </body>
+</html>
+
