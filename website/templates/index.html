@@ -6,6 +6,33 @@
     
     <h1>ドラフトシミュレーター</h1>
     
+    <html lang="ja">
+    <body>
+        <p>球団の数を指定してください</p>
+        <form id="numberOfPlayers">
+            <select>
+                <option disabled selected>球団の数</option>
+                <option value="twoplayers">2</option>
+                <option value="threeplayers">3</option>
+                <option value="fourplayers">4</option>
+            </select>
+        </form>
+        <p>選手の総数を入力してください</p>
+        <form id="numberOfObjects">
+            <select>
+                <option disabled selected>選手の総数</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </form>
+        
+        <p></p>
+        <input button type="submit" value=決定 id ="bot">
+        <div id="test">テスト</div>
+        <script src="index.js" defer></script>
+    </body>
+</html>
     <!--
     {% if username == "hide" %} 
         <h1>管理人</h1>

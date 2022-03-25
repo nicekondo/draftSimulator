@@ -26,7 +26,7 @@ SECRET_KEY = 'kdl9dwt$m3v^lo0-dj7t99miyx5u@sx2+sa@rw7r$(ap=ie3oy'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost-ohnigiri413.paiza-user-lite.cloud',
+    'localhost-ohnigiri413-1.paiza-user-lite.cloud',
     'k-draftsimulator.herokuapp.com',
     ]
 
@@ -79,19 +79,19 @@ WSGI_APPLICATION = 'django_website2.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    } #デフォルト
-    
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    } #デフォルト
+    
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'mydb',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': '127.0.0.1',
+#        'PORT': '3306',
+#    }
 }
 
 
