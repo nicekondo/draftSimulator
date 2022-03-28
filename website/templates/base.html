@@ -1,13 +1,11 @@
 {% load static %} {# static はincludeと違い、使うならロードする必要がある#}
 <!doctype HTML>
 <html>
+    <title>ドラフトシミュレーター</title>
     <head>
         <link rel ="stylesheet" href="{% static 'main.css' %}"> {# cssを置く #}
-        <script src="index.js" defer></script>
     </head>
-    <body  style="
-            text-align: center;
-        ">
+    <body style="text-align: center;">
         {% include "_navbar.html" %}
         
         {% block main %}

@@ -2,45 +2,76 @@
 {% load static %}
 
 {% block main %}
-    {#<img src="{% static 'titleimage.png' %}" /> #}{# タイトル画像を読み込む#}
-    
+    <!-- {#<img src="{% static 'titleimage.png' %}" /> #}{# タイトル画像を読み込む#} -->
+    <html lang="ja">
     <h1>ドラフトシミュレーター</h1>
     
-    <html lang="ja">
     <body>
-        <p>球団の数を指定してください</p>
-        <form id="numberOfPlayers">
-            <select>
+        <p>◆球団の数を指定してください　
+            <br>
+            <select id="numberOfPlayers" onchange="myFunction();">
                 <option disabled selected>球団の数</option>
-                <option value="twoplayers">2</option>
-                <option value="threeplayers">3</option>
-                <option value="fourplayers">4</option>
-            </select>
-        </form>
-        <p>選手の総数を入力してください</p>
-        <form id="numberOfObjects">
-            <select>
-                <option disabled selected>選手の総数</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-        </form>
+        </p>
+        <p>◆選手名を全て登録してください
+        <br>
+        <input type="text" id="objects" placeholder="選手名を入力">
+        <input type="button" value="登録" onclick="addToTextarea();resetTextbox();">
+        </p>
+        <p>◆選手リスト(Read Only)：　
+        <br>
+        <textarea cols="30" rows="10" id="objectList" readonly></textarea>
+        <br>
+        <input type="button" value="選手リストをリセット" onclick="resetTextarea();">
+        </p>
+        <br>
+        <button onclick="firstSubmit();">次へ</button>
         
-        <p></p>
-        <input button type="submit" value=決定 id ="bot">
-        <div id="test">テスト</div>
-        <script src="index.js" defer></script>
+        
+        <script>
+            function myFunction() {
+                let np= document.getElementById("numberOfPlayers").value;
+                if(np != "球団の数"){
+                    document.getElementById("np").innerHTML = "球団数:"+np;
+                }
+            }
+            function addToTextarea() {
+                let objectName = document.getElementById("objects").value;
+                if(objectName != ""){
+                    document.getElementById("objectList").value += objectName + "\n";
+                }
+            }
+            function resetTextbox() {
+                let resetTarget = document.getElementById("objects");
+                resetTarget.value="";
+            }
+            function resetTextarea() {
+                let resetTarget = document.getElementById("objectList");
+                if(resetTarget.value==""){
+                    alert("すでにリセットされています");
+                }else{
+                    resetTarget.value = "";
+                }
+            }
+            function firstSubmit() {
+                let nop= document.getElementById("numberOfPlayers").value;
+                let objectlist = document.getElementById("objectList");
+                if(nop == "球団の数" && objectlist.value != ""){
+                    alert("球団の数を指定してください");
+                }else if(nop != "球団の数" && objectlist.value == ""){
+                    alert("リストに選手を登録してください");
+                }else if(nop=="球団の数" && objectlist.value == ""){
+                    alert("球団の数と選手を設定してください");
+                }else{
+                    <!-- location = "/firstpick"; -->
+                    alert("以降未実装");
+                }
+            }
+        </script>
+        <!-- <script src="index.js" defer></script> -->
     </body>
-</html>
-    <!--
-    {% if username == "hide" %} 
-        <h1>管理人</h1>
-    {% elif username %}
-        <h1>ようこそ　{{username}}さん</h1>
-    {% else %}
-        <h1>ようこそ　匿名さん</h1>
-    {% endif%}
-    -->
-    
+    </html>
 {% endblock %}

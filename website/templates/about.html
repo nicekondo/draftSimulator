@@ -1,14 +1,37 @@
 {% extends "base.html"%}
+{% load static %}
 
 {% block main %}
-<h1>自己紹介</h1>
-<h2>よろしくお願いします</p>
-<h2>スキル</h2>
-<ul>
-    <li>Python</li>
-    <li>C</li>
-</ul>
+<h1>機能紹介</h1>
+<head>
+    <link rel ="stylesheet" href="{% static 'main.css' %}"> {# cssを置く #}
+</head>
+
 <body>
+    <style>
+        .textCenterLeft {
+            display: inline-block;
+            text-align: left;
+            
+        }
+    </style>
+    <div class="textCenterLeft">
+    <h2>実装済みの機能</h2>
+    <div>
+        ・球団数入力フォーム<br>
+        ・選手登録フォーム(登録・リセット)<br>
+        ・現在時刻(おまけ)<br>
+    </div>
+    <h2>実装予定の機能</h2>
+    <div>
+        ・基本機能の実装(指名→競合すれば抽選→発表)<br>
+        ・選手名の重複対策<br>
+        ・文字入力時の利便性向上(Enterキー対応等)<br>
+        ・選手リスト(textarea)の大きさを入力数に応じて自動変更する<br>
+        ・装飾<br>
+    </div>
+    </div>
+    <br><br>
     <a href="#" onclick="history.back(-1);return false;">戻る</a>
 </body>
 {% endblock %}

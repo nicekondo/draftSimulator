@@ -27,6 +27,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost-ohnigiri413-1.paiza-user-lite.cloud',
+    'localhost-ohnigiri413.paiza-user-lite.cloud',
+    'localhost-ohnigiri413.paiza-user.cloud',
+    'localhost-ohnigiri413.paiza-user.cloud',
     'k-draftsimulator.herokuapp.com',
     ]
 
